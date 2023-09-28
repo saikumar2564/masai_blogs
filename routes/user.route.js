@@ -42,7 +42,7 @@ userRouter.post("/login", async (req, res) => {
         process.env.JWT_SECRET,
         { expiresIn: "1H" }
       );
-      res.json({msg:"Logging successful",token})
+      res.json({msg:"Logging successful",token,userExists})
     }else return res.json('Incorrect Password')
   } catch (error) {
     console.log(error);
